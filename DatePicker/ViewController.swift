@@ -37,6 +37,7 @@ class ViewController: UIViewController {
 
         var chooseDateButton = UIBarButtonItem(title: NSLocalizedString("Choose Date", comment: ""), style: .Plain, target: self, action: "addPicker:")
         
+        
         var spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
             target: self, action: nil)
         self.toolbar.setItems( [chooseDateButton], animated: true)
@@ -76,8 +77,6 @@ class ViewController: UIViewController {
 
         datePicker.datePickerMode = .Date
         
-        pickerDateToolbar = UIToolbar()
-        
         let dateComponents = NSDateComponents()
         dateComponents.day = 31
         dateComponents.month = 12
@@ -87,19 +86,14 @@ class ViewController: UIViewController {
         dateComponents.month = 1
         dateComponents.year = 2014
         datePicker.minimumDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
-    }
-    
-    func datePickerDateChanged(dp:UIDatePicker) {
-        self.theDate = dp.date
-    }
-    
-    /**
-    called from toolbar button.
-    */
-    func addPicker(sender : AnyObject) {
         
-        self.blur()
-        self.datePicker.date = self.theDate
+        var done = UIBarButtonItem(title:  NSLocalizedString("Done", comment: ""), style: .Plain, target: self, action: "doneWithDatePicker:")
+        var nextMonth = UIBarButtonItem(title: NSLocalizedString(">", comment: ""), style: .Plain, target: self, action: "nextMonth:")
+        var previousMonth = UIBarButtonItem(title: NSLocalizedString("<", comment: ""), style: .Plain, target: self, action: "previousMonth:")
+        var spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
+            target: self, action: nil)
+        pickerDateToolbar = UIToolbar()
+        pickerDateToolbar.items = [previousMonth, spacer,done,spacer, nextMonth]
         
         var screenRect = self.view.frame
         var pickerSize = self.datePicker.sizeThatFits(CGSizeZero)
@@ -115,12 +109,18 @@ class ViewController: UIViewController {
             pickerRect.origin.y + pickerRect.size.height, // right under the picker
             pickerSize.width, // make them the same width
             toolbarSize.height)
-        
-        var done = UIBarButtonItem(title:  NSLocalizedString("Done", comment: ""), style: .Plain, target: self, action: "doneWithDatePicker:")
-        var spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
-            target: self, action: nil)
-        pickerDateToolbar.items = [spacer,done,spacer]
-        
+    }
+    
+    func datePickerDateChanged(dp:UIDatePicker) {
+        self.theDate = dp.date
+    }
+    
+    /**
+    called from toolbar button.
+    */
+    func addPicker(sender : AnyObject) {
+        self.blur()
+        self.datePicker.date = self.theDate
         self.view.addSubview(self.datePicker)
         self.view.addSubview(self.pickerDateToolbar)
     }
@@ -130,6 +130,20 @@ class ViewController: UIViewController {
         self.pickerDateToolbar.removeFromSuperview()
         unblur()
         self.theDate = self.datePicker.date
+    }
+    
+    func nextMonth(sender : AnyObject) {
+        let currentCalendar = NSCalendar.currentCalendar()
+        let dateComponents = NSDateComponents()
+        dateComponents.month = 1
+        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)
+
+    }
+    func previousMonth(sender : AnyObject) {
+        let currentCalendar = NSCalendar.currentCalendar()
+        let dateComponents = NSDateComponents()
+        dateComponents.month = -1
+        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)
     }
 
 }

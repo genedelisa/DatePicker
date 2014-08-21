@@ -403,6 +403,7 @@
 				B0A9BE8319A6620F00FC2BC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0A9BE8419A6620F00FC2BC7 /* Build configuration list for PBXNativeTarget "DatePickerTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +412,7 @@
 				B0A9BE8619A6620F00FC2BC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
