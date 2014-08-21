@@ -12,6 +12,7 @@
 		B0A9BE7019A6620F00FC2BC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A9BE6E19A6620F00FC2BC7 /* Main.storyboard */; };
 		B0A9BE7219A6620F00FC2BC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A9BE7119A6620F00FC2BC7 /* Images.xcassets */; };
 		B0A9BE7E19A6620F00FC2BC7 /* DatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9BE7D19A6620F00FC2BC7 /* DatePickerTests.swift */; };
+		B0A9BE8819A6652B00FC2BC7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B0A9BE8719A6652B00FC2BC7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		B0A9BE7719A6620F00FC2BC7 /* DatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A9BE7C19A6620F00FC2BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A9BE7D19A6620F00FC2BC7 /* DatePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerTests.swift; sourceTree = "<group>"; };
+		B0A9BE8719A6652B00FC2BC7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		B0A9BE5C19A6620F00FC2BC7 = {
 			isa = PBXGroup;
 			children = (
+				B0A9BE8719A6652B00FC2BC7 /* README.md */,
 				B0A9BE6719A6620F00FC2BC7 /* DatePicker */,
 				B0A9BE7A19A6620F00FC2BC7 /* DatePickerTests */,
 				B0A9BE6619A6620F00FC2BC7 /* Products */,
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0A9BE8819A6652B00FC2BC7 /* README.md in Sources */,
 				B0A9BE6D19A6620F00FC2BC7 /* ViewController.swift in Sources */,
 				B0A9BE6B19A6620F00FC2BC7 /* AppDelegate.swift in Sources */,
 			);
@@ -328,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DatePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -339,6 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DatePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
