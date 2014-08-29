@@ -76,6 +76,8 @@ class ViewController: UIViewController {
         //            forControlEvents:.ValueChanged)
 
         datePicker.datePickerMode = .Date
+        datePicker.timeZone = NSTimeZone.localTimeZone()
+        datePicker.calendar = NSCalendar.currentCalendar()
         
         let dateComponents = NSDateComponents()
         dateComponents.day = 31
