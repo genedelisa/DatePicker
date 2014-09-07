@@ -1,13 +1,12 @@
-# InputBandpass
+# Date Picker
 
-Installing an EQ node on the audio engine input.
+Showing a UIDatePicker in the middle of the screen with a blurred background
 
-Use headphones, or you'll hear feedback.
 
 ## Blog post for this example.
 
 [Blog post](http://www.rockhoppertech.com/blog/)
-
+coming soon
 
 
 ## Bugs
