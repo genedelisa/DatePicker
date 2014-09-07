@@ -2,7 +2,7 @@
 
 Installing an EQ node on the audio engine input.
 
-Use headphones, or you'll hear feedback.'
+Use headphones, or you'll hear feedback.
 
 ## Blog post for this example.
 
