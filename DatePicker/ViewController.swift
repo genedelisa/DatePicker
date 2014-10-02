@@ -67,6 +67,14 @@ class ViewController: UIViewController {
     func unblur() {
         self.blurView.removeFromSuperview()
     }
+
+    // if you touch the view while the datepicker is visible, you will get
+    // a blank screen when it is dismissed. self.view.userInteractionEnabled will not
+    // work because it disables the entire tree.
+    // this works. I don't know a better way, nor why the view is blank when this isn't here.
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    
+    }
     
     func configDatePicker() {
         datePicker.alpha = 1.0
@@ -122,15 +130,22 @@ class ViewController: UIViewController {
     */
     func addPicker(sender : AnyObject) {
         self.blur()
+        
         self.datePicker.date = self.theDate
         self.view.addSubview(self.datePicker)
         self.view.addSubview(self.pickerDateToolbar)
+        
+        // this disables the entire tree
+        //self.view.userInteractionEnabled = false
+        //self.datePicker.userInteractionEnabled = true
+
     }
     
     func doneWithDatePicker(sender : AnyObject) {
+        unblur()
         self.datePicker.removeFromSuperview()
         self.pickerDateToolbar.removeFromSuperview()
-        unblur()
+
         self.theDate = self.datePicker.date
     }
     
@@ -138,14 +153,14 @@ class ViewController: UIViewController {
         let currentCalendar = NSCalendar.currentCalendar()
         let dateComponents = NSDateComponents()
         dateComponents.month = 1
-        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)
+        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)!
 
     }
     func previousMonth(sender : AnyObject) {
         let currentCalendar = NSCalendar.currentCalendar()
         let dateComponents = NSDateComponents()
         dateComponents.month = -1
-        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)
+        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)!
     }
 
 }
