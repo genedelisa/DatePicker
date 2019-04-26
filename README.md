@@ -11,6 +11,8 @@
 [![GitHub commits](https://img.shields.io/github/commits-since/genedelisa/DatePicker/2.0.0.svg)](https://github.com/genedelisa/DatePicker/commits/master)
 [![GitHub last commit](https://img.shields.io/github/last-commit/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/commits/master)
 
+[comment]: # (they say this: https://img.shields.io/github/release-date/:user/:repo.svg)
+
 [![GitHub release](https://img.shields.io/github/release/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/releases/)
 [![GitHub release date](https://img.shields.io/github/release-date/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/releases)
 
@@ -21,7 +23,7 @@
 [![Twitter @GeneDeLisaDev](https://img.shields.io/twitter/follow/GeneDeLisaDev.svg?style=social)](https://twitter.com/GeneDeLisaDev)
 
 
-Shows a UIDatePicker in the middle of the screen with a blurred background.
+Shows a **UIDatePicker** in the middle of the screen with a blurred background using **UIBlurEffect**.
 
 Updated to Swift 5.
 
