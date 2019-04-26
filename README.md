@@ -4,15 +4,14 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://en.wikipedia.org/wiki/MIT_License)
 [![Build Status](https://travis-ci.org/genedelisa/DatePicker.svg)](https://travis-ci.org/genedelisa/DatePicker)
 
-[![GitHub tag](https://img.shields.io/github/tag/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/)
-[![GitHub release](https://img.shields.io/github/release/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/)
-[![GitHub commits](https://img.shields.io/github/commits-since/genedelisa/DatePicker/2.0.0.svg)
+[![GitHub tag](https://img.shields.io/github/tag/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/tags)
+[![GitHub release](https://img.shields.io/github/release/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/releases/)
+[![GitHub commits](https://img.shields.io/github/commits-since/genedelisa/DatePicker/2.0.0.svg)](https://github.com/genedelisa/DatePicker/commits/master)
 [![GitHub version](https://badge.fury.io/gh/genedelisa%2FDatePicker.svg)](https://badge.fury.io/gh/genedelisa%2FDatePicker)
 [![GitHub stars](https://img.shields.io/github/stars/genedelisa/DatePicker.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/genedelisa/DatePicker/stargazers/)
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/)
- [![GitHub release date](https://img.shields.io/github/release-date/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/)
-
+[![GitHub release date](https://img.shields.io/github/release-date/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/)
 
 [![Swift 5](https://img.shields.io/badge/swift5-compatible-4BC51D.svg?style=flat")](https://developer.apple.com/swift)
 [![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://swift.org/)
