@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0223536227391F900B44BB1 /* .codecov.yaml in Resources */ = {isa = PBXBuildFile; fileRef = B0223535227391F800B44BB1 /* .codecov.yaml */; };
 		B0A9BE6B19A6620F00FC2BC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9BE6A19A6620F00FC2BC7 /* AppDelegate.swift */; };
 		B0A9BE6D19A6620F00FC2BC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9BE6C19A6620F00FC2BC7 /* ViewController.swift */; };
 		B0A9BE7019A6620F00FC2BC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A9BE6E19A6620F00FC2BC7 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0223535227391F800B44BB1 /* .codecov.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .codecov.yaml; sourceTree = "<group>"; };
 		B0A9BE6519A6620F00FC2BC7 /* DatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0A9BE6919A6620F00FC2BC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0A9BE6A19A6620F00FC2BC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,12 +67,13 @@
 		B0A9BE5C19A6620F00FC2BC7 = {
 			isa = PBXGroup;
 			children = (
+				B0A9BE8719A6652B00FC2BC7 /* README.md */,
+				B0E4A40622734421008456F9 /* LICENSE */,
+				B0223535227391F800B44BB1 /* .codecov.yaml */,
 				B0E4A40D22735623008456F9 /* .gitignore */,
 				B0E4A40C22735623008456F9 /* .travis.yml */,
 				B0E4A40722734421008456F9 /* .swift-version */,
 				B0E4A40822734421008456F9 /* .swiftlint.yml */,
-				B0E4A40622734421008456F9 /* LICENSE */,
-				B0A9BE8719A6652B00FC2BC7 /* README.md */,
 				B0A9BE6719A6620F00FC2BC7 /* DatePicker */,
 				B0A9BE7A19A6620F00FC2BC7 /* DatePickerTests */,
 				B0A9BE6619A6620F00FC2BC7 /* Products */,
@@ -210,6 +213,7 @@
 				B0E4A40E22735623008456F9 /* .travis.yml in Resources */,
 				B0A9BE7019A6620F00FC2BC7 /* Main.storyboard in Resources */,
 				B0A9BE7219A6620F00FC2BC7 /* Images.xcassets in Resources */,
+				B0223536227391F900B44BB1 /* .codecov.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
