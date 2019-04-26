@@ -8,13 +8,16 @@
 
 import UIKit
 
+// swiftlint:disable trailing_whitespace
+// swiftlint:disable identifier_name
+
 class ViewController: UIViewController {
     
     @IBOutlet var toolbar: UIToolbar!
     
     @IBOutlet var dateLabel: UILabel!
     
-    var theDate:NSDate! {
+    var theDate: Date! {
         didSet {
             updateUI()
         }
@@ -22,44 +25,50 @@ class ViewController: UIViewController {
     
     var datePicker = UIDatePicker()
     
-    var pickerDateToolbar:UIToolbar!
+    var pickerDateToolbar: UIToolbar!
     
-    var formatter:NSDateFormatter!
+    var formatter: DateFormatter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.FullStyle
-        self.theDate = NSDate.date()
-        
+        formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.full
 
-        var chooseDateButton = UIBarButtonItem(title: NSLocalizedString("Choose Date", comment: ""), style: .Plain, target: self, action: "addPicker:")
+        let chooseDateButton = UIBarButtonItem(title: NSLocalizedString("Choose Date", comment: ""), style: .plain, target: self, action: Selector(("addPicker:")))
         
-        
-        var spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
             target: self, action: nil)
-        self.toolbar.setItems( [chooseDateButton], animated: true)
+        self.toolbar.setItems( [spacer, chooseDateButton, spacer], animated: true)
         
         configDatePicker()
+        self.theDate = datePicker.date
     }
     
     func updateUI() {
-        dateLabel.text = formatter.stringFromDate(theDate)
+        DispatchQueue.main.async { [unowned self] in
+            self.dateLabel.text = self.formatter.string(from: self.theDate)
+        }
     }
     
+    func updatePicker(date: Date) {
+        print("new date \(date)")
+        DispatchQueue.main.async { [unowned self] in
+            self.datePicker.date = date
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    var blurView:UIVisualEffectView!
+    var blurView: UIVisualEffectView!
+    
     func blur() {
         // ios 8 stuff
-        blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-        blurView.userInteractionEnabled = false
+        blurView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        blurView.isUserInteractionEnabled = false
         self.view.addSubview(blurView)
         blurView.frame = self.view.bounds
     }
@@ -68,100 +77,105 @@ class ViewController: UIViewController {
         self.blurView.removeFromSuperview()
     }
 
-    // if you touch the view while the datepicker is visible, you will get
-    // a blank screen when it is dismissed. self.view.userInteractionEnabled will not
-    // work because it disables the entire tree.
-    // this works. I don't know a better way, nor why the view is blank when this isn't here.
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-    
-    }
-    
     func configDatePicker() {
         datePicker.alpha = 1.0
         datePicker.backgroundColor = UIColor(red: 0, green: 0.9, blue: 0.9, alpha: 1.0)
-        //        datePicker.addTarget(self,
-        //            action:"datePickerDateChanged:",
-        //            forControlEvents:.ValueChanged)
+        datePicker.addTarget(self,
+                             action: #selector(datePickerDateChanged(_:)),
+                             for: .valueChanged)
 
-        datePicker.datePickerMode = .Date
-        datePicker.timeZone = NSTimeZone.localTimeZone()
-        datePicker.calendar = NSCalendar.currentCalendar()
+        datePicker.datePickerMode = .date
+        datePicker.timeZone = TimeZone.current
+        datePicker.calendar = Calendar.current
         
-        let dateComponents = NSDateComponents()
+        // just an example of restraining dates to a year. Only dates in 2014 will be valid
+        var dateComponents = DateComponents()
         dateComponents.day = 31
         dateComponents.month = 12
         dateComponents.year = 2014
-        datePicker.maximumDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
+        datePicker.maximumDate = Calendar.current.date(from: dateComponents)
+
         dateComponents.day = 1
         dateComponents.month = 1
         dateComponents.year = 2014
-        datePicker.minimumDate = NSCalendar.currentCalendar().dateFromComponents(dateComponents)
+        datePicker.minimumDate = Calendar.current.date(from: dateComponents)
         
-        var done = UIBarButtonItem(title:  NSLocalizedString("Done", comment: ""), style: .Plain, target: self, action: "doneWithDatePicker:")
-        var nextMonth = UIBarButtonItem(title: NSLocalizedString(">", comment: ""), style: .Plain, target: self, action: "nextMonth:")
-        var previousMonth = UIBarButtonItem(title: NSLocalizedString("<", comment: ""), style: .Plain, target: self, action: "previousMonth:")
-        var spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace,
+        let done = UIBarButtonItem(title: NSLocalizedString("Done", comment: ""), style: .plain, target: self, action: #selector(doneWithDatePicker(_:)))
+        let nextMonth = UIBarButtonItem(title: NSLocalizedString(">", comment: ""), style: .plain, target: self, action: #selector(nextMonth(_:)))
+        let previousMonth = UIBarButtonItem(title: NSLocalizedString("<", comment: ""), style: .plain, target: self, action: #selector(previousMonth(_:)))
+        let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
             target: self, action: nil)
         pickerDateToolbar = UIToolbar()
-        pickerDateToolbar.items = [previousMonth, spacer,done,spacer, nextMonth]
+        pickerDateToolbar.items = [previousMonth, spacer, done, spacer, nextMonth]
         
-        var screenRect = self.view.frame
-        var pickerSize = self.datePicker.sizeThatFits(CGSizeZero)
-        var x = screenRect.origin.x + (screenRect.size.width / 2) - (pickerSize.width / 2)
-        var pickerRect = CGRectMake(x,
-            screenRect.origin.y + (screenRect.size.height / 2) - (pickerSize.height / 2),
-            pickerSize.width,
-            pickerSize.height)
+        let screenRect = self.view.frame
+        let pickerSize = self.datePicker.sizeThatFits(CGSize.zero)
+        let x = screenRect.origin.x + (screenRect.size.width / 2) - (pickerSize.width / 2)
+        let pickerRect = CGRect(x: x,
+                                y: screenRect.origin.y + (screenRect.size.height / 2) - (pickerSize.height / 2),
+                                width: pickerSize.width,
+                                height: pickerSize.height)
         self.datePicker.frame = pickerRect
         
-        var toolbarSize = self.pickerDateToolbar.sizeThatFits(CGSizeZero)
-        pickerDateToolbar.frame = CGRectMake(x,
-            pickerRect.origin.y + pickerRect.size.height, // right under the picker
-            pickerSize.width, // make them the same width
-            toolbarSize.height)
+        let toolbarSize = self.pickerDateToolbar.sizeThatFits(CGSize.zero)
+        // y right under the picker, and the same width as the picker
+        pickerDateToolbar.frame = CGRect(x: x,
+                                         y: pickerRect.origin.y + pickerRect.size.height,
+                                         width: pickerSize.width,
+                                         height: toolbarSize.height)
     }
-    
-    func datePickerDateChanged(dp:UIDatePicker) {
-        self.theDate = dp.date
+
+    @objc
+    func datePickerDateChanged(_ picker: UIDatePicker) {
+        print("\(#function)")
+        self.theDate = picker.date
     }
     
     /**
     called from toolbar button.
     */
-    func addPicker(sender : AnyObject) {
+    @objc
+    func addPicker(_ sender: AnyObject) {
         self.blur()
         
         self.datePicker.date = self.theDate
         self.view.addSubview(self.datePicker)
         self.view.addSubview(self.pickerDateToolbar)
-        
-        // this disables the entire tree
-        //self.view.userInteractionEnabled = false
-        //self.datePicker.userInteractionEnabled = true
-
     }
     
-    func doneWithDatePicker(sender : AnyObject) {
+    @objc
+    func doneWithDatePicker(_ sender: AnyObject) {
+        self.theDate = self.datePicker.date
+
         unblur()
+        
         self.datePicker.removeFromSuperview()
         self.pickerDateToolbar.removeFromSuperview()
-
-        self.theDate = self.datePicker.date
     }
     
-    func nextMonth(sender : AnyObject) {
-        let currentCalendar = NSCalendar.currentCalendar()
-        let dateComponents = NSDateComponents()
+    @objc
+    func nextMonth(_ sender: AnyObject) {
+        print("\(#function)")
+
+        let currentCalendar = Calendar.current
+        var dateComponents = DateComponents()
         dateComponents.month = 1
-        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)!
+
+        if let d = currentCalendar.date(byAdding: dateComponents, to: self.datePicker.date) {
+            updatePicker(date: d)
+        }
 
     }
-    func previousMonth(sender : AnyObject) {
-        let currentCalendar = NSCalendar.currentCalendar()
-        let dateComponents = NSDateComponents()
+    @objc
+    func previousMonth(_ sender: AnyObject) {
+        print("\(#function)")
+        let currentCalendar = Calendar.current
+        var dateComponents = DateComponents()
         dateComponents.month = -1
-        self.datePicker.date = currentCalendar.dateByAddingComponents(dateComponents, toDate: self.datePicker.date, options: nil)!
+        
+        if let d = currentCalendar.date(byAdding: dateComponents, to: self.datePicker.date) {
+            updatePicker(date: d)
+        }
     }
 
 }
-
