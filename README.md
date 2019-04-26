@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/genedelisa/DatePicker.svg)](https://travis-ci.org/genedelisa/DatePicker)
 [![GitHub tag](https://img.shields.io/github/tag/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/)
 [![GitHub release](https://img.shields.io/github/release/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/)
-[![GitHub commits](https://img.shields.io/github/commits-since/genedelisa/DatePicker/1.0.0.svg)
+[![GitHub commits](https://img.shields.io/github/commits-since/genedelisa/DatePicker/2.0.0.svg)
 [![GitHub version](https://badge.fury.io/gh/genedelisa%2FDatePicker)](https://github.com/genedelisa/DatePicker)
 [![GitHub stars](https://img.shields.io/github/stars/genedelisa/DatePicker.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/genedelisa/DatePicker/stargazers/)
 
