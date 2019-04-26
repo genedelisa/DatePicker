@@ -6,7 +6,10 @@
 
 [![GitHub tag](https://img.shields.io/github/tag/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/tags)
 [![GitHub version](https://badge.fury.io/gh/genedelisa%2FDatePicker.svg)](https://badge.fury.io/gh/genedelisa%2FDatePicker)
+
 [![GitHub stars](https://img.shields.io/github/stars/genedelisa/DatePicker.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/genedelisa/DatePicker/stargazers/)
+[![GitHub forks]( https://img.shields.io/github/forks/genedelisa/DatePicker.svg?label=Forks)]()
+[![GitHub watchers](https://img.shields.io/github/watchers/genedelisa/DatePicker.svg?label=Watchers)]()
 
 [![GitHub commits](https://img.shields.io/github/commits-since/genedelisa/DatePicker/2.0.0.svg)](https://github.com/genedelisa/DatePicker/commits/master)
 [![GitHub last commit](https://img.shields.io/github/last-commit/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/commits/master)
@@ -16,23 +19,19 @@
 [![GitHub release](https://img.shields.io/github/release/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/releases/)
 [![GitHub release date](https://img.shields.io/github/release-date/genedelisa/DatePicker.svg)](https://github.com/genedelisa/DatePicker/releases)
 
-[![GitHub forks]( https://img.shields.io/github/forks/genedelisa/DatePicker.svg?label=Fork)]
-[![GitHub stars](https://img.shields.io/github/stars/genedelisa/DatePicker.svg?style=social)]
-[![GitHub watchers](https://img.shields.io/github/watchers/genedelisa/DatePicker.svg?label=Watch)]
 
 [![Swift 5](https://img.shields.io/badge/swift5-compatible-4BC51D.svg?style=flat")](https://developer.apple.com/swift)
 [![Platforms iOS](https://img.shields.io/badge/Platforms-iOS-lightgray.svg?style=flat)](https://swift.org/)
 
 [![Sponsors](https://img.shields.io/badge/Sponsors-Rockhopper%20Technologies-orange.svg?style=flat)](http://www.rockhoppertech.com/)
 [![Twitter @GeneDeLisaDev](https://img.shields.io/twitter/follow/GeneDeLisaDev.svg?style=social)](https://twitter.com/GeneDeLisaDev)
-[![GitHub followers](https://img.shields.io/github/followers/genedelisa.svg?label=Follow)]
-
+![GitHub followers](https://img.shields.io/github/followers/genedelisa.svg?label=Follow&style=social)
 
 ## What's this?
 
 This is a simple example that shows a **UIDatePicker** in the middle of the screen with a blurred background using **UIBlurEffect**.
 
-Updated to Swift 5.
+My original code from 2014 just updated to Swift 5.
 
 ## Blog post for this example.
 
