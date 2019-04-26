@@ -12,6 +12,8 @@
 		B0A9BE7019A6620F00FC2BC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A9BE6E19A6620F00FC2BC7 /* Main.storyboard */; };
 		B0A9BE7219A6620F00FC2BC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A9BE7119A6620F00FC2BC7 /* Images.xcassets */; };
 		B0A9BE7E19A6620F00FC2BC7 /* DatePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A9BE7D19A6620F00FC2BC7 /* DatePickerTests.swift */; };
+		B0E4A40E22735623008456F9 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = B0E4A40C22735623008456F9 /* .travis.yml */; };
+		B0E4A40F22735623008456F9 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B0E4A40D22735623008456F9 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		B0E4A40622734421008456F9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B0E4A40722734421008456F9 /* .swift-version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-version"; sourceTree = "<group>"; };
 		B0E4A40822734421008456F9 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B0E4A40C22735623008456F9 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		B0E4A40D22735623008456F9 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 		B0A9BE5C19A6620F00FC2BC7 = {
 			isa = PBXGroup;
 			children = (
+				B0E4A40D22735623008456F9 /* .gitignore */,
+				B0E4A40C22735623008456F9 /* .travis.yml */,
 				B0E4A40722734421008456F9 /* .swift-version */,
 				B0E4A40822734421008456F9 /* .swiftlint.yml */,
 				B0E4A40622734421008456F9 /* LICENSE */,
@@ -198,6 +204,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E4A40F22735623008456F9 /* .gitignore in Resources */,
+				B0E4A40E22735623008456F9 /* .travis.yml in Resources */,
 				B0A9BE7019A6620F00FC2BC7 /* Main.storyboard in Resources */,
 				B0A9BE7219A6620F00FC2BC7 /* Images.xcassets in Resources */,
 			);
